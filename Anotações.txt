@@ -1,0 +1,60 @@
+Http => protocolo de transferencia de hipertexto (HTML)/protocolo de transferencia de dados na web, serve para que duas partes se comuniquem através da web
+Ex.: https://img.webnots.com/2013/06/HTTP-Request-and-Response-Over-Web-1.png
+
+retorna a pag html
+
+REQUEST
+https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_RequestMessageExample.png
+header serve para indicar para onde se deve ir no servidor e o body para fornecer os demais parametros para o host
+
+RESPONSE
+https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_ResponseMessageExample.png
+
+
+VERBOS HTTP
+GET = REQUEST/RETORNA DADOS DE UM HOST
+POST = CRIAR NOVAS COISAS / MTO USADO EM FORMULÁRIOS / NAO PODE USAR VIA LINK
+PUT = ATUALIZA DADO MASSIFICADOS....MTO SEMELHANTE AO POST
+PATCH = ATUALIZA COISAS PARCIALMENTE
+DELETE = DELETA
+
+status code
+
+serve basicamente para indicar qual foi o resultado da requisição para aquela API;
+
+https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+
+webservices são serviços que servem para prover uma camada de comunicação com outras coisas
+sua grande vantagem é que é possível reutilizar em outros projetos diferentes ex.: computadores diferente mas que utilizam componentes igual
+é uma API que roda na web; uma API que funciona através do protocolo HTTP
+API é um software ou biblioteca que serve para que uma coisa comunique com outra coisa
+API é uma camada de comunicação; é uma interface de comunicação entre duas ou mais coisas
+
+
+REST: é um padrao de desenvolvimento de WS; que facilita sua implementaçao
+
+cliente-SERVIDOR >> o rest não pode ser cliente e servidor ao msm tempo
+Stateless >> nao deve guardar o cabeçalho e o corpo da requisição
+Cache >> fazer cache de informações para melhorar a performance da aplicação, maior parte das APIs nao utilizam cache
+Saber trabalhar com camadas >> 
+Interface uniforme e direta >> Interface = rotas (entry points)...utilizar os verbos HTTP
+
+pode retornar JSON, SOAP, .xml, arquivos...
+
+JSON JavaScript Object Notation...que utiliza texto legível a humanos, no formato atributo-valor.
+Isto é, um modelo de transmissão de informações no formato texto, muito usado em web services que usa transferência de estado representacional e aplicações AJAX,
+substituindo o uso do XML
+
+
+API Rest x API Restful >> Restfull é quando se impleta uma API rest seguindo todas as padronizações; mais indicados para aplicações mais robustas
+
+
+https://factory.hr/api/wp-content/uploads/2016/10/glory-of-rest.png
+
+î
+| Level 3 >>> HATEOAS = HYPERMEDIA CONTROL ... possivel alterar o recurso e informações de como buscar recursos secundários ou relacionados
+| Level 2 >>> HTTP verbos (GET, POST, PUT, DELETE....)
+| Level 1 >>> quando dividimos a solução em recursos/entidades da API; cada um com seu entry point
+| Level 0 >>> para APIs com uma unica rota
+
+Postman....

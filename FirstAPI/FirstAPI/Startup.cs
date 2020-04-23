@@ -12,7 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
-
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace FirstAPI
 {
@@ -30,6 +30,10 @@ namespace FirstAPI
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //Swagger
+            services.AddSwaggerGen(config => {
+                config.SwaggerDoc("v1", new Info {Title="API de Produtos", Version = "v1"});
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +51,10 @@ namespace FirstAPI
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseSwagger(); //Gerar um arquivo JSON
+            app.UseSwaggerUI(config => { // Views HTML do Swagger
+                config.SwaggerEndpoint("/swagger/v1/swagger.json","v1 docs");            
+            });
         }
     }
 }
